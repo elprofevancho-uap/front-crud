@@ -15,11 +15,11 @@ const UserTable = (props) => (
           <td className="align-middle">{user.name}</td>
           <td className="align-middle">{user.username}</td>
           <td className="text-center">
-            <button
+           <button
             className="btn btn-sm btn-info me-2"
-            data-bs-toggle="modal"
+            data-bs-toggle="modal" 
             data-bs-target="#userModal"
-            onClick={() => props.editRow(user)}
+            onClick={() => props.editRow(user)} // Actualiza el estado en App.js
             >
             Editar
             </button>
