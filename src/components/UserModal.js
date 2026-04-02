@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 const UserModal = ({ editing, currentUser, addUser, updateUser, setEditing }) => {
-  const initialFormState = { id: null, name: '', username: '' };
-  const [user, setUser] = useState(initialFormState);
+  // Ahora el estado inicial se toma directamente de las props al montarse
+  const [user, setUser] = useState(editing ? currentUser : { id: null, name: '', username: '' });
 
-  // Sincronizar el estado del formulario con el usuario a editar o limpiar si es nuevo
+  // El useEffect solo queda por si las props cambian mientras el modal ya está abierto
   useEffect(() => {
-    if (editing) {
-      setUser(currentUser);
-    } else {
-      setUser(initialFormState);
-    }
+    setUser(editing ? currentUser : { id: null, name: '', username: '' });
   }, [editing, currentUser]);
 
+  // ... resto del código (handleInputChange, handleSubmit, etc.)
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
