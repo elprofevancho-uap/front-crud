@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+.navbar {
+  background-color: #003366 !important; /* Azul institucional ejemplo */
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Efecto hover suave */
+.nav-link:hover {
+  color: #ffcc00 !important; /* Dorado ejemplo */
+}
